@@ -45,4 +45,3 @@ class Solution:
             return outSymmetrical and inSymmetrical
         else:
             return False
-

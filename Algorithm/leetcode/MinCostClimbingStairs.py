@@ -36,4 +36,3 @@ def minCostClimbingStairs3(cost):
     for c in cost[2:]:
         min_cost1, min_cost2 = min_cost2, min(min_cost1, min_cost2) + c
     return min(min_cost1, min_cost2)
-

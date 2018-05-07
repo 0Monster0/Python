@@ -22,8 +22,6 @@ def two_sum2(numbers, target):
         dic[num] = i
 
 
-
-
 # binary search
 def two_sum3(numbers, target):
     for i in range(len(numbers)):

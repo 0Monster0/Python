@@ -101,3 +101,4 @@ def delete_duplicates4(head):
         else:  # no duplicates were found
              prev, curr = curr, curr.next
     return head
+
