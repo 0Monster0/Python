@@ -75,5 +75,3 @@ if isinstance(data_type, dict):
         print('%d元：%d张' % (k, v))
 else:
     print(data_type)
-
-

@@ -47,3 +47,4 @@ class Solution:
         # if p and q:
         #     return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
         # return p is q      # q is q 等价于 True if p is None and q is None else False
+

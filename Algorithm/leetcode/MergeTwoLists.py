@@ -21,3 +21,4 @@ def merge_two_lists(l1, l2):
             l1, l2 = l2, l1
         l1.next = merge_two_lists(l1.next, l2)
     return l1 or l2
+

@@ -38,5 +38,3 @@ def single_number4(nums):
 
 def single_number5(nums):
     return reduce(operator.xor, nums)
-
-
