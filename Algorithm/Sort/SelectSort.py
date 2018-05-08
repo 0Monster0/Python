@@ -3,7 +3,7 @@
 # @File    : SelectSort.py
 # detail
 
-from generateArrayHelper import generateArray
+from Algorithm.Sort.generateArrayHelper import generateArray
 
 
 # 首先在未排序序列中找到最小元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小元素，然后放到排序序列末尾。以此递归。
@@ -18,4 +18,4 @@ def select_sort(lists):
 
 
 new_lists = select_sort(generateArray(10))
-print (new_lists)
+print(new_lists)

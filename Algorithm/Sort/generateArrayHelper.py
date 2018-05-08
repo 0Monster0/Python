@@ -6,5 +6,5 @@ import random
 
 
 def generateArray(n):
-    arr = [random.randint(0, 1000) for num in xrange(n)]
+    arr = [random.randint(0, 1000) for num in range(n)]
     return arr

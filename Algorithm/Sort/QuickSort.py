@@ -13,6 +13,8 @@ from Algorithm.Sort.generateArrayHelper import generateArray
 
 3、分别对left和right两个部分进行递归排序。
 '''
+
+
 # 第一种方法
 def quick_sort(lists, left, right):
     if left >= right:
@@ -34,16 +36,17 @@ def quick_sort(lists, left, right):
     quick_sort(lists, left + 1, high)
     return lists
 
+
 # new_lists = quick_sort(generateArray(10),0,len(generateArray(10)) - 1)
 # print(new_lists)
 
 
-#第二种方法
+# 第二种方法
 def quick_sort(seq):
     if len(seq) <= 1:
         return seq
     pivot = seq.pop()
-    left, right = [],[]
+    left, right = [], []
     for x in seq:
         if x > pivot:
             right.append(x)
@@ -54,49 +57,51 @@ def quick_sort(seq):
 
 # 第三种方法
 def quickSort(alist):
-   quickSortHelper(alist,0,len(alist)-1)
+    quickSortHelper(alist, 0, len(alist) - 1)
 
-def quickSortHelper(alist,first,last):
-   if first<last:
 
-       splitpoint = partition(alist,first,last)
+def quickSortHelper(alist, first, last):
+    if first < last:
+        splitpoint = partition(alist, first, last)
 
-       quickSortHelper(alist,first,splitpoint-1)
-       quickSortHelper(alist,splitpoint+1,last)
+        quickSortHelper(alist, first, splitpoint - 1)
+        quickSortHelper(alist, splitpoint + 1, last)
 
-def partition(alist,first,last):
-   pivotvalue = alist[first]
 
-   leftmark = first+1
-   rightmark = last
+def partition(alist, first, last):
+    pivotvalue = alist[first]
 
-   done = False
-   while not done:
+    leftmark = first + 1
+    rightmark = last
 
-       while leftmark <= rightmark and alist[leftmark] <= pivotvalue:
-           leftmark = leftmark + 1
+    done = False
+    while not done:
 
-       while alist[rightmark] >= pivotvalue and rightmark >= leftmark:
-           rightmark = rightmark -1
+        while leftmark <= rightmark and alist[leftmark] <= pivotvalue:
+            leftmark = leftmark + 1
 
-       if rightmark < leftmark:
-           done = True
-       else:
-           temp = alist[leftmark]
-           alist[leftmark] = alist[rightmark]
-           alist[rightmark] = temp
+        while alist[rightmark] >= pivotvalue and rightmark >= leftmark:
+            rightmark = rightmark - 1
 
-   temp = alist[first]
-   alist[first] = alist[rightmark]
-   alist[rightmark] = temp
+        if rightmark < leftmark:
+            done = True
+        else:
+            temp = alist[leftmark]
+            alist[leftmark] = alist[rightmark]
+            alist[rightmark] = temp
 
-   return rightmark
+    temp = alist[first]
+    alist[first] = alist[rightmark]
+    alist[rightmark] = temp
 
-alist = [54,26,93,17,77,31,44,55,20]
+    return rightmark
+
+
+alist = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 quickSort(alist)
 print(alist)
 
-
 # 第四种方法
-quick_sort = lambda array: array if len(array) <= 1 else quick_sort([item for item in array[1:] if item <= array[0]]) + [array[0]] + quick_sort([item for item in array[1:] if item > array[0]])
-
+quick_sort = lambda array: array if len(array) <= 1 else quick_sort(
+    [item for item in array[1:] if item <= array[0]]) + [array[0]] + quick_sort(
+    [item for item in array[1:] if item > array[0]])

@@ -4,7 +4,7 @@
 # detail
 
 from generateArrayHelper import generateArray
-from InsertSort import insert_sort
+from Algorithm.Sort.InsertSort import insert_sort
 
 '''
 希尔排序(Shell Sort)是插入排序的一种。(也叫“最小增量排序”)

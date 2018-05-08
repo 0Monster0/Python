@@ -11,6 +11,8 @@ from Algorithm.Sort.generateArrayHelper import generateArray
 插入算法把要排序的数组分成两部分：第一部分包含了这个数组的所有元素， 但将最后一个元素除外（让数组多一个空间才有插入的位置），而第二部分就只包含这一个元素（即待插入元素）。
 在第一部分排序完成后，再将这个最后元素插入到已排好序的第一部分中。
 '''
+
+
 def insert_sort(lists, start, gap):
     for index in range(start + gap, len(lists), gap):
         # 记录大循环走到了第几个元素的值
@@ -26,18 +28,20 @@ def insert_sort(lists, start, gap):
         lists[previus_num] = currentValue
     return lists
 
-# new_lists = insert_sort(generateArray(10), 0, 1)
-# print (new_lists)
 
-# def insert_sort(lists):
-#     # 插入排序
-#     count = len(lists)
-#     for i in range(1, count):
-#         key = lists[i]
-#         j = i - 1
-#         while j >= 0:
-#             if lists[j] > key:
-#                 lists[j + 1] = lists[j]
-#                 lists[j] = key
-#             j -= 1
-#     return lists
+new_lists = insert_sort(generateArray(10), 0, 1)
+print(new_lists)
+
+
+def insert_sort2(lists):
+    # 插入排序
+    count = len(lists)
+    for i in range(1, count):
+        key = lists[i]
+        j = i - 1
+        while j >= 0:
+            if lists[j] > key:
+                lists[j + 1] = lists[j]
+                lists[j] = key
+            j -= 1
+    return lists

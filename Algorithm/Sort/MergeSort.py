@@ -11,6 +11,8 @@ from Algorithm.Sort.generateArrayHelper import generateArray
 否则将第二个有序表中的元素a[j]复制到r[k]中，并令j和k分别加上1，如此循环下去，直到其中一个有序表取完，然后再将另一个有序表中剩余的元素复制到r中从下标k到下标t的单元。
 归并排序的算法我们通常用递归实现，先把待排序区间[s,t]以中点二分，接着把左边子区间排序，再把右边子区间排序，最后把左区间和右区间用一次归并操作合并成有序的区间[s,t]。
 '''
+
+
 def merge(left, right):
     result = []
     i, j = 0, 0
@@ -25,6 +27,7 @@ def merge(left, right):
     result += right[j:]
     return result
 
+
 def merge_sort(lists):
     if len(lists) <=1:
         return lists
@@ -32,6 +35,7 @@ def merge_sort(lists):
     left = lists[:middle]
     right = lists[middle:]
     return merge(merge_sort(left), merge_sort(right))
+
 
 new_lists = merge_sort(generateArray(0))
 print (new_lists)

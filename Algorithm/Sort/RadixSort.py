@@ -11,6 +11,8 @@ from Algorithm.Sort.generateArrayHelper import generateArray
 有时候有些属性是有优先级顺序的，先按低优先级排序，再按高优先级排序，最后的次序就是高优先级高的在前，高优先级相同的低优先级高的在前。
 基数排序基于分别排序，分别收集，所以其是稳定的排序算法。
 '''
+
+
 def radix_sort(lists, radix = 10):
     k = int(math.log(max(lists), radix))
     bucket = [[] for b in range(radix)]
@@ -23,5 +25,6 @@ def radix_sort(lists, radix = 10):
             del l[:]
     return lists
 
+
 new_lists = radix_sort(generateArray(10))
-print (new_lists)
+print(new_lists)
